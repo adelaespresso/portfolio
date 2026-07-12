@@ -1,34 +1,41 @@
 # adela — portfolio
 
-Věrná minimalistická kopie webu (světlý vzhled), rozdělená na **samostatné stránky** jako originál:
-`home · film · videos · photography · creative · contact`.
+Minimalistický vícestránkový web (Helvetica, černá, světlé pozadí). Každý film, video i sada fotek má **vlastní podstránku s galerií**, na kterou se proklikneš z náhledu. Fotky jsou uložené lokálně v `assets/` (nezávislé na Wixu).
 
-Každá stránka je **soběstačný HTML soubor** (styl i skript uvnitř) — žádné externí `css/`/`js/` složky, nic se nemůže „nenačíst".
-
-## Soubory
+## Struktura
 ```
-index.html          (home)
-film.html
-videos.html
-photography.html
-creative.html
-contact.html
+index.html              home (2 obrázky přes celou šíři)
+film.html               přehled filmů  → grandmas-garden.html, pigeons.html, ...
+videos.html             přehled videí  → wien.html, letter-to-denmark.html, ...
+photography.html        přehled fotek  → street.html, people.html, ...
+creative.html           The Life of Onyxfy
+contact.html            text + e-mail
+<sada>.html             galerie dané sady (15 podstránek)
+assets/<sada>/01.jpg…   optimalizované fotky (173 ks), 01 = titulní/náhled
 .nojekyll
 ```
 
 ## Publikace na GitHub Pages
-1. Nahraj **všech 6 .html souborů + .nojekyll** do **kořene** repozitáře `portfolio` (žádné podsložky).
-   - Přes web: repozitář → „Add file → Upload files" → přetáhni všechny soubory → Commit.
-2. Settings → **Pages** → Source: **Deploy from a branch** → branch **main**, složka **/ (root)** → Save.
-3. Web poběží na `https://adelaespresso.github.io/portfolio/`.
-4. Po nahrání dej tvrdé obnovení (Ctrl/Cmd + Shift + R), ať se nenačte stará verze z cache.
+Souborů je teď hodně (21 stránek + 173 fotek), proto doporučuji jeden z těchto způsobů:
 
-Menu nahoře prokliká jednotlivé stránky, aktivní stránka je podtržená.
+**A) GitHub Desktop (nejpohodlnější)**
+1. Stáhni `adela-portfolio-site.zip`, rozbal.
+2. V GitHub Desktop otevři repozitář `portfolio`, nakopíruj do něj obsah rozbalené složky (přepiš staré soubory).
+3. Commit → Push.
+
+**B) Přes web GitHubu**
+1. Repozitář → „Add file → Upload files".
+2. Přetáhni **všechny .html soubory + složku `assets` + `.nojekyll`** najednou (drag & drop zvládne i podsložky). Při velkém počtu to může chvíli trvat; když to spadne, nahraj po částech (nejdřív .html, pak složku `assets`).
+3. Commit.
+
+Pak Settings → Pages → Deploy from a branch → **main / (root)**. Po nahrání dej Ctrl/Cmd + Shift + R.
+
+## Jak to funguje
+- Náhled na `film.html` / `videos.html` / `photography.html` = titulní fotka sady (`01.jpg`); kliknutím se otevře podstránka s celou galerií.
+- V galerii se kliknutím na fotku otevře velký náhled; šipkami ←/→ nebo tlačítky se listuje, Esc zavírá.
 
 ## K doladění
-- **Odkazy na filmy/videa:** karty vedou zatím na YouTube kanál; u `film.html`/`videos.html` stačí změnit `href` na konkrétní díla.
-- **Obrázky:** načítají se z původního Wix CDN (funguje hned).
-- **LinkedIn:** na originále byl jen placeholder, tak vynechán — pošli profil a přidám.
-
-## Vzhled
-Bílé pozadí, černý text, čisté písmo Inter, prokliky s podtržením, u fotek a Onyxfy lightbox. Barvy/písmo se mění nahoře v `<style>` (`:root`).
+- **Titulní fotky** sad = zatím první fotka (`01.jpg`). Když chceš jinou, stačí ji ve složce přejmenovat na `01.jpg` (a bývalou 01 na jiné číslo), nebo mi řekni kterou.
+- **Videa:** podstránky videí jsou zatím jen galerie fotek. Pošli YouTube odkazy a nahoru vložím přehrávač.
+- **LinkedIn:** ikona je v záhlaví, odkaz je placeholder (`#`) — pošli URL profilu.
+- **home / creative / contact:** tyto obrázky se zatím načítají z Wix CDN. Když pošleš i tyto fotky, přesunu je do `assets/` a web bude 100% nezávislý na Wixu.

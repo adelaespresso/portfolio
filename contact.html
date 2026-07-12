@@ -17,11 +17,10 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 h1,h2,h3{font-weight:400}
 ::selection{background:#000;color:#fff}
 
-/* header: [hamburger]  adela.  [instagram linkedin youtube] */
 .site-head{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid var(--line)}
 .head-in{max-width:var(--maxw);margin:0 auto;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:1rem var(--gutter)}
 .head-left{justify-self:start}
-.brand{justify-self:center;font-size:1.5rem;font-weight:400;letter-spacing:.01em;line-height:1}
+.brand{justify-self:center;font-size:1.5rem;letter-spacing:.01em;line-height:1}
 .head-right{justify-self:end}
 .social{display:flex;align-items:center;gap:.9rem}
 .social a{color:var(--ink);display:flex}
@@ -38,17 +37,13 @@ body.menu-open .scrim{opacity:1;visibility:visible}
 .panel{position:fixed;top:0;left:0;bottom:0;z-index:120;width:min(82vw,300px);background:#fff;border-right:1px solid var(--line);
   padding:5rem var(--gutter) 2rem;display:flex;flex-direction:column;gap:1.3rem;transform:translateX(-100%);transition:transform .35s ease}
 body.menu-open .panel{transform:translateX(0)}
-.panel a{font-size:1.15rem;letter-spacing:.01em}
+.panel a{font-size:1.15rem}
 .panel a.active{text-decoration:underline;text-underline-offset:4px}
 .panel .pclose{position:absolute;top:1.1rem;right:1.2rem;font-size:1.6rem;line-height:1}
 
-/* shells */
 .wrap{max-width:var(--maxw);margin:0 auto;padding:clamp(2.2rem,6vw,4.5rem) var(--gutter) clamp(3rem,7vw,6rem)}
 .bare{padding:0}
-.page-title{font-size:clamp(1.4rem,3.2vw,2rem);margin-bottom:.3rem}
-.page-intro{max-width:60ch;margin-bottom:clamp(1.8rem,4vw,3rem)}
 
-/* grids */
 .grid{display:grid;gap:clamp(1.4rem,3vw,2.3rem)}
 .g2{grid-template-columns:repeat(2,1fr)}
 .g3{grid-template-columns:repeat(3,1fr)}
@@ -59,10 +54,8 @@ body.menu-open .panel{transform:translateX(0)}
 .item:hover .frame img{transform:scale(1.035)}
 .cap{margin-top:.6rem;font-size:.95rem}
 
-/* home — full-bleed stacked images */
 .home-media img{width:100%;height:auto;display:block}
 
-/* creative */
 .feature{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.6rem,4vw,3rem);align-items:center;margin-bottom:clamp(2rem,4vw,3rem)}
 .feature .frame{overflow:hidden;background:#f3f3f3;aspect-ratio:1/1}
 .feature img{width:100%;height:100%;object-fit:cover}
@@ -70,46 +63,49 @@ body.menu-open .panel{transform:translateX(0)}
 .feature p{max-width:52ch}
 .bordered{border:1px solid var(--ink)}
 
-/* contact/about */
 .about{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(1.6rem,5vw,4rem);align-items:start}
 .about .frame{overflow:hidden;background:#f3f3f3}
 .about img{width:100%;object-fit:cover}
 .about p{margin-bottom:1rem;max-width:60ch}
 .about .mail{display:inline-block;margin-top:.5rem;border-bottom:1px solid var(--ink);padding-bottom:2px}
 
+/* subpage gallery */
+.subhead{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:clamp(1.6rem,4vw,2.6rem)}
+.subhead h1{font-size:clamp(1.3rem,3vw,1.9rem)}
+.back{font-size:.9rem;border-bottom:1px solid transparent}
+.back:hover{border-bottom-color:var(--ink)}
+.gallery{column-count:3;column-gap:clamp(.9rem,2vw,1.5rem)}
+.gallery button{display:block;width:100%;padding:0;margin:0 0 clamp(.9rem,2vw,1.5rem);break-inside:avoid;background:#f3f3f3;cursor:zoom-in}
+.gallery img{width:100%;height:auto;display:block;transition:opacity .3s ease}
+.gallery button:hover img{opacity:.9}
+
 /* footer */
 .site-foot{border-top:1px solid var(--line);margin-top:2rem}
 .foot-in{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.6rem;padding:1.5rem var(--gutter);font-size:.85rem}
-.foot-in a{border-bottom:1px solid transparent}
-.foot-in a:hover{border-bottom-color:var(--ink)}
+.foot-in a{border-bottom:1px solid transparent}.foot-in a:hover{border-bottom-color:var(--ink)}
 .foot-brand{font-size:1.15rem;letter-spacing:.01em}
 
 /* lightbox */
-.lb{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:4vw;background:rgba(255,255,255,.97)}
+.lb{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:3vw;background:rgba(255,255,255,.98)}
 .lb.open{display:flex}
-.lb img{max-width:92vw;max-height:86vh;object-fit:contain}
-.lb .x{position:absolute;top:1.1rem;right:1.4rem;font-size:2rem;line-height:1}
+.lb img{max-width:90vw;max-height:88vh;object-fit:contain}
+.lb .x{position:absolute;top:1rem;right:1.3rem;font-size:2rem;line-height:1}
+.lb .nav{position:absolute;top:50%;transform:translateY(-50%);font-size:2.4rem;line-height:1;padding:.4rem .8rem;user-select:none}
+.lb .prev{left:.4rem}.lb .next{right:.4rem}
 
-@media (max-width:820px){.g3{grid-template-columns:repeat(2,1fr)}.feature,.about{grid-template-columns:1fr}.about .frame{max-width:420px}}
-@media (max-width:520px){.g2{grid-template-columns:1fr}.brand{font-size:1.3rem}.social{gap:.7rem}}
+@media (max-width:820px){.g3{grid-template-columns:repeat(2,1fr)}.feature,.about{grid-template-columns:1fr}.about .frame{max-width:420px}.gallery{column-count:2}}
+@media (max-width:520px){.g2{grid-template-columns:1fr}.brand{font-size:1.3rem}.social{gap:.7rem}.gallery{column-count:1}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
 <body>
-<header class="site-head">
-  <div class="head-in">
-    <div class="head-left">
-      <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="panel"><span></span><span></span><span></span></button>
-    </div>
-    <a href="index.html" class="brand">adela.</a>
-    <div class="head-right"><div class="social"><a href="https://instagram.com/adelaespresso" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"/><circle cx="12" cy="12" r="3.8"/><circle cx="17.3" cy="6.7" r="1.05" fill="currentColor" stroke="none"/></svg></a><a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 5.5a1.94 1.94 0 1 1-3.88 0 1.94 1.94 0 0 1 3.88 0zM3.4 8.9h3.1V21H3.4zM9.2 8.9h2.97v1.66h.04c.41-.78 1.43-1.6 2.94-1.6 3.14 0 3.72 2.07 3.72 4.76V21h-3.1v-5.35c0-1.28-.02-2.92-1.78-2.92-1.78 0-2.05 1.39-2.05 2.83V21H9.2z"/></svg></a><a href="https://youtube.com/@adelaespresso" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.1-.39-4.58a2.4 2.4 0 0 0-1.7-1.7C19.42 5.33 12 5.33 12 5.33s-7.42 0-8.91.39a2.4 2.4 0 0 0-1.7 1.7C1 8.9 1 12 1 12s0 3.1.39 4.58a2.4 2.4 0 0 0 1.7 1.7c1.49.39 8.91.39 8.91.39s7.42 0 8.91-.39a2.4 2.4 0 0 0 1.7-1.7C23 15.1 23 12 23 12zM9.8 15.15v-6.3L15.25 12z"/></svg></a></div></div>
-  </div>
-</header>
+<header class="site-head"><div class="head-in">
+<div class="head-left"><button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="panel"><span></span><span></span><span></span></button></div>
+<a href="index.html" class="brand">adela.</a>
+<div class="head-right"><div class="social"><a href="https://instagram.com/adelaespresso" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"/><circle cx="12" cy="12" r="3.8"/><circle cx="17.3" cy="6.7" r="1.05" fill="currentColor" stroke="none"/></svg></a><a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 5.5a1.94 1.94 0 1 1-3.88 0 1.94 1.94 0 0 1 3.88 0zM3.4 8.9h3.1V21H3.4zM9.2 8.9h2.97v1.66h.04c.41-.78 1.43-1.6 2.94-1.6 3.14 0 3.72 2.07 3.72 4.76V21h-3.1v-5.35c0-1.28-.02-2.92-1.78-2.92-1.78 0-2.05 1.39-2.05 2.83V21H9.2z"/></svg></a><a href="https://youtube.com/@adelaespresso" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.1-.39-4.58a2.4 2.4 0 0 0-1.7-1.7C19.42 5.33 12 5.33 12 5.33s-7.42 0-8.91.39a2.4 2.4 0 0 0-1.7 1.7C1 8.9 1 12 1 12s0 3.1.39 4.58a2.4 2.4 0 0 0 1.7 1.7c1.49.39 8.91.39 8.91.39s7.42 0 8.91-.39a2.4 2.4 0 0 0 1.7-1.7C23 15.1 23 12 23 12zM9.8 15.15v-6.3L15.25 12z"/></svg></a></div></div>
+</div></header>
 <div class="scrim" id="scrim"></div>
-<nav class="panel" id="panel" aria-label="Primary">
-  <button class="pclose" id="pclose" aria-label="Close menu">&times;</button>
-  <a href="index.html">home</a><a href="film.html">film</a><a href="videos.html">videos</a><a href="photography.html">photography</a><a href="creative.html">creative</a><a href="contact.html" class="active">contact</a>
-</nav>
+<nav class="panel" id="panel" aria-label="Primary"><button class="pclose" id="pclose" aria-label="Close menu">&times;</button><a href="index.html">home</a><a href="film.html">film</a><a href="videos.html">videos</a><a href="photography.html">photography</a><a href="creative.html">creative</a><a href="contact.html" class="active">contact</a></nav>
 <main class="wrap">
 <div class="about">
   <div class="frame"><img src="https://static.wixstatic.com/media/77f3ef_9a7c06abc8dc42f996fa7e77017d5dc2~mv2.png/v1/crop/x_683,y_518,w_1394,h_1162/fill/w_900,h_750,al_c,q_90,enc_auto/77f3ef_9a7c06abc8dc42f996fa7e77017d5dc2~mv2.png" alt="Portrait of Adéla"></div>
@@ -121,12 +117,9 @@ body.menu-open .panel{transform:translateX(0)}
   </div>
 </div>
 </main>
-<footer class="site-foot">
-  <div class="foot-in">
-    <span>contact: <a href="mailto:adela.smidova@gmail.com">adela.smidova@gmail.com</a></span>
-    <span class="foot-brand">adela.</span>
-  </div>
-</footer>
+<footer class="site-foot"><div class="foot-in">
+<span>contact: <a href="mailto:adela.smidova@gmail.com">adela.smidova@gmail.com</a></span>
+<span class="foot-brand">adela.</span></div></footer>
 
 <script>
 (function(){
@@ -137,10 +130,28 @@ body.menu-open .panel{transform:translateX(0)}
   if(pc)pc.addEventListener('click',function(){toggle(false);});
   document.querySelectorAll('#panel a').forEach(function(a){a.addEventListener('click',function(){toggle(false);});});
   document.addEventListener('keydown',function(e){if(e.key==='Escape')toggle(false);});
-  var lb=document.getElementById('lb'),lbi=document.getElementById('lbi');
-  if(lb){document.querySelectorAll('[data-full]').forEach(function(el){el.addEventListener('click',function(e){e.preventDefault();lbi.src=el.getAttribute('data-full');lb.classList.add('open');});});
-    lb.addEventListener('click',function(){lb.classList.remove('open');lbi.src='';});
-    document.addEventListener('keydown',function(e){if(e.key==='Escape'){lb.classList.remove('open');lbi.src='';}});}
+  var lb=document.getElementById('lb');
+  if(lb){
+    var lbi=document.getElementById('lbi');
+    var items=[].slice.call(document.querySelectorAll('[data-full]'));
+    var fulls=items.map(function(el){return el.getAttribute('data-full');});
+    var idx=0;
+    function show(i){idx=(i+fulls.length)%fulls.length;lbi.src=fulls[idx];}
+    function open(i){show(i);lb.classList.add('open');}
+    function close(){lb.classList.remove('open');lbi.src='';}
+    items.forEach(function(el,i){el.addEventListener('click',function(e){e.preventDefault();open(i);});});
+    var x=lb.querySelector('.x'),pv=lb.querySelector('.prev'),nx=lb.querySelector('.next');
+    if(x)x.addEventListener('click',close);
+    if(pv)pv.addEventListener('click',function(e){e.stopPropagation();show(idx-1);});
+    if(nx)nx.addEventListener('click',function(e){e.stopPropagation();show(idx+1);});
+    lb.addEventListener('click',function(e){if(e.target===lb)close();});
+    document.addEventListener('keydown',function(e){
+      if(!lb.classList.contains('open'))return;
+      if(e.key==='Escape')close();
+      else if(e.key==='ArrowLeft')show(idx-1);
+      else if(e.key==='ArrowRight')show(idx+1);
+    });
+  }
 })();
 </script>
 </body>
