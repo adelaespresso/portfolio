@@ -1,41 +1,26 @@
 # adela — portfolio
 
-Minimalistický vícestránkový web (Helvetica, černá, světlé pozadí). Každý film, video i sada fotek má **vlastní podstránku s galerií**, na kterou se proklikneš z náhledu. Fotky jsou uložené lokálně v `assets/` (nezávislé na Wixu).
+Minimalistický vícestránkový web (Helvetica, černá, světlé pozadí). Fotky jsou lokálně v `assets/` s **původními názvy**.
 
-## Struktura
-```
-index.html              home (2 obrázky přes celou šíři)
-film.html               přehled filmů  → grandmas-garden.html, pigeons.html, ...
-videos.html             přehled videí  → wien.html, letter-to-denmark.html, ...
-photography.html        přehled fotek  → street.html, people.html, ...
-creative.html           The Life of Onyxfy
-contact.html            text + e-mail
-<sada>.html             galerie dané sady (15 podstránek)
-assets/<sada>/01.jpg…   optimalizované fotky (173 ks), 01 = titulní/náhled
-.nojekyll
-```
+## Stránky
+- **home** – dvě fotky přes celou šíři, navazuje zápatí (bez mezery)
+- **film / videos / photography** – přehledy; náhled = hlavní fotka sady, proklik na detail
+- **detail filmu** – velká hlavní fotka → název + popis → ostatní stills (zachované poměry stran)
+- **detail videa** – YouTube přehrávač (Nostalgia, They call it summer, Wien) nebo velká fotka, pod tím stills, bez popisků
+- **detail fotografie** – galerie sady
+- **creative / contact**
 
 ## Publikace na GitHub Pages
-Souborů je teď hodně (21 stránek + 173 fotek), proto doporučuji jeden z těchto způsobů:
+Stáhni `adela-portfolio-site.zip`, rozbal a nahraj do repozitáře `portfolio` (přes GitHub Desktop: zkopíruj obsah → Commit → Push; nebo přes web přetáhni všechny `.html` + složku `assets` + `.nojekyll`). Pak Settings → Pages → main / (root). Po nahrání Ctrl/Cmd + Shift + R.
 
-**A) GitHub Desktop (nejpohodlnější)**
-1. Stáhni `adela-portfolio-site.zip`, rozbal.
-2. V GitHub Desktop otevři repozitář `portfolio`, nakopíruj do něj obsah rozbalené složky (přepiš staré soubory).
-3. Commit → Push.
+## Hotové úpravy z poslední revize
+- Záhlaví: opravená LinkedIn ikona; Instagram a YouTube jako tlačítka (se správnými URL); „adela." uprostřed, hamburger vlevo.
+- Home: odstraněná mezera před zápatím.
+- Nové hlavní fotky (film, videos, photography) dle zadání; Morituri roztažené na 4:3 bez bílých okrajů.
+- Detaily filmů s popisy; uvnitř zachované poměry stran fotek.
+- YouTube přehrávače u tří videí; nové rozvržení Photography (popisky v obraze) a Contact (vzdušnější, menší fotka, text níže).
 
-**B) Přes web GitHubu**
-1. Repozitář → „Add file → Upload files".
-2. Přetáhni **všechny .html soubory + složku `assets` + `.nojekyll`** najednou (drag & drop zvládne i podsložky). Při velkém počtu to může chvíli trvat; když to spadne, nahraj po částech (nejdřív .html, pak složku `assets`).
-3. Commit.
-
-Pak Settings → Pages → Deploy from a branch → **main / (root)**. Po nahrání dej Ctrl/Cmd + Shift + R.
-
-## Jak to funguje
-- Náhled na `film.html` / `videos.html` / `photography.html` = titulní fotka sady (`01.jpg`); kliknutím se otevře podstránka s celou galerií.
-- V galerii se kliknutím na fotku otevře velký náhled; šipkami ←/→ nebo tlačítky se listuje, Esc zavírá.
-
-## K doladění
-- **Titulní fotky** sad = zatím první fotka (`01.jpg`). Když chceš jinou, stačí ji ve složce přejmenovat na `01.jpg` (a bývalou 01 na jiné číslo), nebo mi řekni kterou.
-- **Videa:** podstránky videí jsou zatím jen galerie fotek. Pošli YouTube odkazy a nahoru vložím přehrávač.
-- **LinkedIn:** ikona je v záhlaví, odkaz je placeholder (`#`) — pošli URL profilu.
-- **home / creative / contact:** tyto obrázky se zatím načítají z Wix CDN. Když pošleš i tyto fotky, přesunu je do `assets/` a web bude 100% nezávislý na Wixu.
+## Zbývá doladit (pošli mi, prosím)
+- **YouTube odkazy** pro zbylá videa: Letter to Denmark, january melancholy, 3 pm (zatím mají nahoře velkou fotku).
+- **LinkedIn URL** (ikona je v záhlaví, odkaz je zatím placeholder `#`).
+- **home / creative / contact** obrázky se stále načítají z Wix CDN – když je pošleš, přesunu do `assets/`.
