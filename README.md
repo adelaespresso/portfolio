@@ -29,5 +29,9 @@ Stáhni `adela-portfolio-site.zip`, rozbal a nahraj obsah do repozitáře `portf
 
 ## Zbývá doladit (pošli mi)
 - **YouTube odkazy** pro videa bez přehrávače: letter to Denmark, january melancholy, 3 pm.
-- **LinkedIn URL** (ikona v záhlaví, odkaz je zatím `#`).
 - Obrázky pro **creative** (zatím z Wixu) – pak bude web 100% nezávislý na Wixu.
+
+
+## Jazyk a lokalita
+- Web je **jen v angličtině** (žádná čeština v obsahu ani v SEO).
+- Místo působnosti pro vyhledávání: **Prague a Hamburg**.
